@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailEmojiFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <TextView
+        android:id="@+id/textJudul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="30dp"
+        android:textSize="35dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:text="Tanggal"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Picture"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tell Me Your Day"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="380dp"/>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/gambar"-->
+        <!--android:layout_width="350dp"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginTop="120dp" />-->
+
+    <ImageView
+        android:id="@+id/hasil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="3dp"
+        />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:text="Camera"/>
+    <Button
+        android:id="@+id/btnSimpan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+
+        android:text="Save"/>
+
+    <!--<TextView-->
+        <!--android:id="@+id/textKeterangan"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="400dp"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:text="Keterangan"/>-->
+
+</FrameLayout>
+</ScrollView>
