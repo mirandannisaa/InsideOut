@@ -13,6 +13,7 @@
         android:id="@+id/idFotoresult"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/textTanggalact"/>
+
     <TextView
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"

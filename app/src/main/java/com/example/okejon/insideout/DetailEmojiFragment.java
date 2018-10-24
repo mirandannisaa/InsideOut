@@ -30,7 +30,6 @@ public class DetailEmojiFragment extends Fragment {
     EditText editText;
     //variabel foto untuk foto awal, fotohasil untuk foto setelah diemoji
     Bitmap foto, fotohasil ;
-    TextView tvTanggal, tvTanggalact, tvCurhat, tvCurhatact;
 
     public DetailEmojiFragment() {
         // Required empty public constructor
@@ -55,7 +54,6 @@ public class DetailEmojiFragment extends Fragment {
 
             //textbox curhat
             final EditText editText = (EditText) myFragmentView.findViewById(R.id.editText);
-            //final TextView textTanggal = (TextView) myFragmentView.findViewById(R.id.textJudul);
 
             //memanggil kls emoji krn ambil tanggal untuk list fragment
             final TextView tittle = (TextView) myFragmentView.findViewById(R.id.textJudul);
