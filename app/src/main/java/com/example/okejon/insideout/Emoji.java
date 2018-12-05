@@ -14,6 +14,10 @@ public class Emoji {
         this.tanggal = tanggal;
     }
 
+    //aplikasi blm utuh, msh pecah. simpan digalery.
+    //tampilan warna
+    //
+
 
     public String getNama() {
         return tanggal;

@@ -89,6 +89,7 @@ public class DetailEmojiFragment extends Fragment {
         return myFragmentView;
     }
 
+    //hasil foto dr kamera
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
