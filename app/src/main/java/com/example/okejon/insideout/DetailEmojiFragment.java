@@ -7,6 +7,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,6 +43,16 @@ public class DetailEmojiFragment extends Fragment {
         View myFragmentView = inflater.inflate(R.layout.fragment_detail_emoji, container, false);
 
         View v = getView();
+
+
+        Button btnloc =(Button)myFragmentView.findViewById(R.id.buttonLoc);
+        btnloc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent inte = new Intent(getContext(), LocationActivity.class);
+                startActivity(inte);
+            }
+        });
         //button camera
             Button btn = (Button) myFragmentView.findViewById(R.id.button);
             btn.setOnClickListener(new View.OnClickListener() {
@@ -54,11 +66,17 @@ public class DetailEmojiFragment extends Fragment {
 
             //textbox curhat
             final EditText editText = (EditText) myFragmentView.findViewById(R.id.editText);
+            final EditText editText1 = (EditText)myFragmentView.findViewById(R.id.txtTgl);
+            final TextView tvLoc = (TextView)myFragmentView.findViewById(R.id.tvLoc);
 
             //memanggil kls emoji krn ambil tanggal untuk list fragment
-            final TextView tittle = (TextView) myFragmentView.findViewById(R.id.textJudul);
+            //final TextView tittle = (TextView) myFragmentView.findViewById(R.id.txtTgl);
             Emoji emoji = Emoji.insideout[(int) emojiId];
-            tittle.setText(emoji.getNama());
+            editText1.setText(emoji.getNama());
+
+            Bundle bundle = getActivity().getIntent().getExtras();
+            String showLoc = bundle.getString("locationku");
+            tvLoc.setText(showLoc);
 
             imageView = (ImageView) myFragmentView.findViewById(R.id.hasil);
 
@@ -73,16 +91,21 @@ public class DetailEmojiFragment extends Fragment {
                     intactivity.putExtra("idfoto", fotohasil);
 
                     String mytext = editText.getText().toString();
+                    String textku = editText1.getText().toString();
+                    String locationku = tvLoc.getText().toString();
                     Bundle bundle = new Bundle();
+                    bundle.putString("textku", textku);
                     bundle.putString("mytext",mytext);
+                    bundle.putString("locationku", locationku);
                     intactivity.putExtras(bundle);
 
-                    String txtTanggal = tittle.getText().toString();
+                    String txtTanggal = editText1.getText().toString();
                     Bundle bundle2 = new Bundle();
                     bundle2.putString("textTanggal",txtTanggal);
                     intactivity.putExtras(bundle2);
-
                     startActivity(intactivity);
+
+
                 }
             });
         //return fragment

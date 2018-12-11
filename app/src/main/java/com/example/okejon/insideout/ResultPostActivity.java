@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class ResultPostActivity extends AppCompatActivity {
 
-    TextView txtCurhat, txtTanggal;
+    TextView txtCurhat, txtTanggal, txtLoc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,11 @@ public class ResultPostActivity extends AppCompatActivity {
         Bundle bundle=getIntent().getExtras();
         String showText=bundle.getString("mytext");
         txtCurhat.setText(showText);
+
+        txtLoc = (TextView)findViewById(R.id.textLocationact);
+        Bundle bundle3=getIntent().getExtras();
+        String showLoc=bundle.getString("locationku");
+        txtLoc.setText(showLoc);
 
     }
 }

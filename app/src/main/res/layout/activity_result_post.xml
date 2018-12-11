@@ -29,4 +29,11 @@
         android:id="@+id/textCurhatact"
         android:layout_below="@+id/idFotoresult"/>
 
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textLocationact"
+        android:layout_below="@+id/textCurhatact"/>
+
 </RelativeLayout>

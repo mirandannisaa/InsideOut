@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LocationActivity">
+
+
+    <ImageView
+        android:id="@+id/imageview_an"
+        android:layout_centerHorizontal="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/map"
+        />
+
+    <Button
+        android:id="@+id/butlocat"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="Save"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <Button
+        android:id="@+id/button_location"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="Track Location"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="380dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <Button
+        android:id="@+id/button_pilihlocation"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="Pick Location"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/button_location"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+
+    <TextView
+        android:id="@+id/textview_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:gravity="center"
+        android:text="Click the button to track the location"
+        />
+</RelativeLayout>
