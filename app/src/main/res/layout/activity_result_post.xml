@@ -6,18 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ResultPostActivity">
 
-    <ImageView
-        android:layout_marginLeft="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/idFotoresult"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textTanggalact"/>
+
 
     <TextView
         android:layout_marginTop="30dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="30dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textTanggalact"/>
@@ -26,14 +20,25 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textCurhatact"
-        android:layout_below="@+id/idFotoresult"/>
+        android:layout_marginLeft="10dp"
+        android:id="@+id/textLocationact"
+        android:layout_below="@+id/textTanggalact"/>
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/idFotoresult"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textLocationact"/>
 
     <TextView
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textLocationact"
-        android:layout_below="@+id/textCurhatact"/>
+        android:id="@+id/textCurhatact"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/idFotoresult"/>
+
 
 </RelativeLayout>

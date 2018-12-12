@@ -32,6 +32,7 @@ public class DetailEmojiFragment extends Fragment {
     EditText editText;
     //variabel foto untuk foto awal, fotohasil untuk foto setelah diemoji
     Bitmap foto, fotohasil ;
+    public static TextView location;
 
     public DetailEmojiFragment() {
         // Required empty public constructor
@@ -67,7 +68,7 @@ public class DetailEmojiFragment extends Fragment {
             //textbox curhat
             final EditText editText = (EditText) myFragmentView.findViewById(R.id.editText);
             final EditText editText1 = (EditText)myFragmentView.findViewById(R.id.txtTgl);
-            final TextView tvLoc = (TextView)myFragmentView.findViewById(R.id.tvLoc);
+            location = (TextView)myFragmentView.findViewById(R.id.tvLoc);
 
             //memanggil kls emoji krn ambil tanggal untuk list fragment
             //final TextView tittle = (TextView) myFragmentView.findViewById(R.id.txtTgl);
@@ -75,8 +76,8 @@ public class DetailEmojiFragment extends Fragment {
             editText1.setText(emoji.getNama());
 
             Bundle bundle = getActivity().getIntent().getExtras();
-            String showLoc = bundle.getString("locationku");
-            tvLoc.setText(showLoc);
+            //String showLoc = bundle.getString("locationku");
+            //tvLoc.setText(showLoc);
 
             imageView = (ImageView) myFragmentView.findViewById(R.id.hasil);
 
@@ -92,7 +93,7 @@ public class DetailEmojiFragment extends Fragment {
 
                     String mytext = editText.getText().toString();
                     String textku = editText1.getText().toString();
-                    String locationku = tvLoc.getText().toString();
+                    String locationku = location.getText().toString();
                     Bundle bundle = new Bundle();
                     bundle.putString("textku", textku);
                     bundle.putString("mytext",mytext);

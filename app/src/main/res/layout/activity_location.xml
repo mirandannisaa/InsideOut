@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,35 +26,35 @@
         android:id="@+id/butlocat"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:text="Save"
+        android:layout_below="@id/button_pilihlocation"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="1dp"
         android:background="@color/colorPrimary"
+        android:text="Save"
         android:textColor="@color/colorPrimaryDark"
-        />
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/button_location"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:text="Track Location"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="380dp"
         android:background="@color/colorPrimary"
-        android:textColor="@color/colorPrimaryDark"
-        />
+        android:text="Track Location"
+        android:textColor="@color/colorPrimaryDark" />
 
     <Button
         android:id="@+id/button_pilihlocation"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:text="Pick Location"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/button_location"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:background="@color/colorPrimary"
+        android:text="Pick Location"
         android:textColor="@color/colorPrimaryDark"
-        />
+        android:visibility="invisible" />
 
 
     <TextView
@@ -61,3 +67,4 @@
         android:text="Click the button to track the location"
         />
 </RelativeLayout>
+</ScrollView>
