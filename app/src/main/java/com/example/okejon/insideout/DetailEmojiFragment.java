@@ -32,6 +32,7 @@ public class DetailEmojiFragment extends Fragment {
     EditText editText;
     //variabel foto untuk foto awal, fotohasil untuk foto setelah diemoji
     Bitmap foto, fotohasil ;
+    public static TextView location;
 
     public DetailEmojiFragment() {
         // Required empty public constructor
@@ -44,7 +45,6 @@ public class DetailEmojiFragment extends Fragment {
 
         View v = getView();
 
-
         Button btnloc =(Button)myFragmentView.findViewById(R.id.buttonLoc);
         btnloc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,60 +54,55 @@ public class DetailEmojiFragment extends Fragment {
             }
         });
         //button camera
-            Button btn = (Button) myFragmentView.findViewById(R.id.button);
-            btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //intent camera
-                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(intent, 0);
-                }
-            });
+        Button btn = (Button) myFragmentView.findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //intent camera
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent, 0);
+            }
+        });
 
-            //textbox curhat
-            final EditText editText = (EditText) myFragmentView.findViewById(R.id.editText);
-            final EditText editText1 = (EditText)myFragmentView.findViewById(R.id.txtTgl);
-            final TextView tvLoc = (TextView)myFragmentView.findViewById(R.id.tvLoc);
+        //textbox curhat
+        final EditText editText = (EditText) myFragmentView.findViewById(R.id.editText);
+        final EditText editText1 = (EditText)myFragmentView.findViewById(R.id.txtTgl);
+        location = (TextView)myFragmentView.findViewById(R.id.tvLoc);
 
-            //memanggil kls emoji krn ambil tanggal untuk list fragment
-            //final TextView tittle = (TextView) myFragmentView.findViewById(R.id.txtTgl);
-            Emoji emoji = Emoji.insideout[(int) emojiId];
-            editText1.setText(emoji.getNama());
+        //memanggil kls emoji krn ambil tanggal untuk list fragment
+        Emoji emoji = Emoji.insideout[(int) emojiId];
+        editText1.setText(emoji.getNama());
 
-            Bundle bundle = getActivity().getIntent().getExtras();
-            String showLoc = bundle.getString("locationku");
-            tvLoc.setText(showLoc);
+        Bundle bundle = getActivity().getIntent().getExtras();
 
-            imageView = (ImageView) myFragmentView.findViewById(R.id.hasil);
+        imageView = (ImageView) myFragmentView.findViewById(R.id.hasil);
 
-            //button kirim ke activity
-            Button btn2 = (Button)myFragmentView.findViewById(R.id.btnSimpan);
-            btn2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Emojifier emojiku = new Emojifier();
-                    fotohasil = emojiku.detectFaces(view.getContext(), foto);
-                    Intent intactivity = new Intent(view.getContext(),ResultPostActivity.class);
-                    intactivity.putExtra("idfoto", fotohasil);
+        //button kirim ke activity
+        Button btn2 = (Button)myFragmentView.findViewById(R.id.btnSimpan);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Emojifier emojiku = new Emojifier();
+                fotohasil = emojiku.detectFaces(view.getContext(), foto);
+                Intent intactivity = new Intent(view.getContext(),ResultPostActivity.class);
+                intactivity.putExtra("idfoto", fotohasil);
 
-                    String mytext = editText.getText().toString();
-                    String textku = editText1.getText().toString();
-                    String locationku = tvLoc.getText().toString();
-                    Bundle bundle = new Bundle();
-                    bundle.putString("textku", textku);
-                    bundle.putString("mytext",mytext);
-                    bundle.putString("locationku", locationku);
-                    intactivity.putExtras(bundle);
+                String mytext = editText.getText().toString();
+                String textku = editText1.getText().toString();
+                String locationku = location.getText().toString();
+                Bundle bundle = new Bundle();
+                bundle.putString("textku", textku);
+                bundle.putString("mytext",mytext);
+                bundle.putString("locationku", locationku);
+                intactivity.putExtras(bundle);
 
-                    String txtTanggal = editText1.getText().toString();
-                    Bundle bundle2 = new Bundle();
-                    bundle2.putString("textTanggal",txtTanggal);
-                    intactivity.putExtras(bundle2);
-                    startActivity(intactivity);
-
-
-                }
-            });
+                String txtTanggal = editText1.getText().toString();
+                Bundle bundle2 = new Bundle();
+                bundle2.putString("textTanggal",txtTanggal);
+                intactivity.putExtras(bundle2);
+                startActivity(intactivity);
+            }
+        });
         //return fragment
         return myFragmentView;
     }

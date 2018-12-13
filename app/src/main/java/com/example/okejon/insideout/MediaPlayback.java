@@ -34,15 +34,33 @@ public class MediaPlayback extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
 
         listVideo = new ArrayList<>();
-        listVideo.add("Jangan Menyerah");
-        listVideo.add("Fiersa Besari - Waktu yang Salah");
+        listVideo.add("Video Motivasi Persahabatan");
+        listVideo.add("Video Motivasi Terbaik");
+        listVideo.add("Video Motivasi Jangan Menyerah");
 
+        //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listVideo);
+        //adapter ambil data class vidclip
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, VidClip.video);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                switch (position){
+//                    case 0 :
+//                        videoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.j));
+//                        break;
+//
+//                    case 1 :
+//                        videoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.f));
+//                        break;
+//                }
+//
+//                //controller untuk playback
+//                videoView.setMediaController(new MediaController(MainActivity.this));
+//
+//                videoView.requestFocus();
+//                videoView.start();
 
                 //panggil method
                 VidClip vidClip = VidClip.video[(int) id];

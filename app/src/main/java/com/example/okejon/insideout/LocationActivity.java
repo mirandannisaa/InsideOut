@@ -116,7 +116,7 @@ public class LocationActivity extends AppCompatActivity implements GetTaskAddres
 //            public void onClick(View v) {
 //                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
 //                Bundle b = new Bundle();
-//                //b.putDouble("id",id);
+//                b.putDouble("id",id);
 //                intent.putExtras(b);
 //                startActivity(intent);
 //            }
@@ -126,14 +126,12 @@ public class LocationActivity extends AppCompatActivity implements GetTaskAddres
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
-//                Bundle b = new Bundle();
-//                //b.putDouble("id",id);
-//                intent.putExtras(b);
 
                 String textku = mLoc.getText().toString();
+                //DetailEmojiFragment.location.setText(textku);
                 Bundle bundle = new Bundle();
                 bundle.putString("textku", textku);
-
+                //finish();
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -214,7 +212,8 @@ public class LocationActivity extends AppCompatActivity implements GetTaskAddres
             //argumen settext nama tempat, alamat, waktu
             mLocationTextView.setText(getString(R.string.address_text, "Searching Places", "Searching Address", System.currentTimeMillis()));
             mTrackingLocation = true;
-            mLocationButton.setText("Stop Tracking");
+            mLocationButton.setText("SAVE");
+
             mRotateAnim.start();
 
         }
@@ -226,8 +225,10 @@ public class LocationActivity extends AppCompatActivity implements GetTaskAddres
             mTrackingLocation = false;
             mFusedLocationClient.removeLocationUpdates(mLocationCallback);
             mLocationButton.setText("Start Tracking Location");
-            mLocationTextView.setText("Tracking stop");
+            //mLocationTextView.setText("Tracking stop");
+            DetailEmojiFragment.location.setText(mLocationTextView.getText().toString());
             mRotateAnim.end();
+            finish();
         }
     }
 

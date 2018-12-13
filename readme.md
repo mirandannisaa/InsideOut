@@ -5,7 +5,7 @@
 
 # Judul dan Deskripsi Singkat :
   - Judul : Inside Out
-  - Deskripsi : Diary yang bisa mendeteksi emoji dari wajah user yang didapat dari camera. Camera digunakan oleh user untuk mengambil foto selfie secara realtime yang nantinya user akan melakukan input berupa text tentang perasaannya saat itu.
+  - Deskripsi : Diary yang bisa mendeteksi emoji dari wajah user yang didapat dari camera. Camera digunakan oleh user untuk mengambil foto selfie secara realtime yang nantinya user akan melakukan input berupa text tentang perasaannya saat itu. Pada aplikasi ini, pengguna dapat mengambil lokasi realtime dimana pengguna berada. Kemudian menyimpannya beserta diary yang ditulisnya. Saat pengguna merasa butuh hiburan pengguna dapat memutar video yang telah disediakan baik setelah menulis diary maupun sebelum menulis diary. Selain itu pengguna juga dapat memasang widget aplikasi ini pada layar utama handphone yang berisi list diary yang diupdate secara berkala.
 
 # Requirement :
   - Minimal OS Android Lollipop 
@@ -23,6 +23,11 @@
   - MyFirebaseMessagingService : digunakan untuk menerima pesan dari firebase console/postman
   - MyNotificationManager : berisi notifikasi bar yang muncul saat dikirim pesan dari firebase console/postman saat notif di klik akan menuju intent selanjutnya
   - ResultPostActivity : berisi hasil akhir dari class DetailEmojiFragment
+  - FirstActivity : halaman utama yang tampil setelah splash screen. terdiri dari logo, button untuk menuju diary dan video.
+  - LocationActivity : class untuk mengatur halaman agar pengguna dapat mengambil lokasi.
+  - GetTaskAddress : class untuk mendapatkan data alamat / data lokasi.
+  - MediaPlayback : class untuk mengatur proses berjalannya video yang disediakan.
+  - VidClip : class untuk menyimpan data video baik berupa url maupun file yang sudah disediakan secara offline secara statis.
 
 # License :
                             Apache License
