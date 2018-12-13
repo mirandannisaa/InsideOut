@@ -15,10 +15,10 @@ public class DataHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 // TODO Auto-generated method stub
 
-        String sql1 = "create table curhat (id_cur integer primary key, tanggal date, keterangan text null, lokasi text null);";
+        String sql1 = "create table curhat (id_cur integer primary key, tanggal text, keterangan text null, lokasi text null);";
         Log.d("Data", "onCreate: " + sql1);
         db.execSQL(sql1);
-        sql1 = "INSERT INTO supplier (id_sup, nama) VALUES ('1', 'PT Adidas Ina'),('2', 'PT Nike Ina');";
+        sql1 = "INSERT INTO curhat (id_cur, tanggal,keterangan, lokasi VALUES ('1', '10 Desember','capek banyak tugas','malang');";
         db.execSQL(sql1);
 
 
