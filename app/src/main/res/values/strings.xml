@@ -12,7 +12,7 @@
     <string name="action_settings">Settings</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
-    <string name="date_count_format">%1$d @%2$s</string>
+    <string name="date_count_format">%1$ @%2$s</string>
     <string name="widget_button_update">LAST UPDATED</string>
 
     <string name="location_text">"Latitude: %1$.4f \n Longitude: %2$.4f \n Timestamp: %3$tr"</string>
