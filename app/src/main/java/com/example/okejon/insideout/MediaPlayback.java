@@ -28,7 +28,7 @@ public class MediaPlayback extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_media_playback);
 
         videoView = (VideoView) findViewById(R.id.videoView);
         listView = (ListView) findViewById(R.id.listView);

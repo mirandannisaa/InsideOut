@@ -45,7 +45,6 @@ public class DetailEmojiFragment extends Fragment {
 
         View v = getView();
 
-
         Button btnloc =(Button)myFragmentView.findViewById(R.id.buttonLoc);
         btnloc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,13 +70,10 @@ public class DetailEmojiFragment extends Fragment {
             location = (TextView)myFragmentView.findViewById(R.id.tvLoc);
 
             //memanggil kls emoji krn ambil tanggal untuk list fragment
-            //final TextView tittle = (TextView) myFragmentView.findViewById(R.id.txtTgl);
             Emoji emoji = Emoji.insideout[(int) emojiId];
             editText1.setText(emoji.getNama());
 
             Bundle bundle = getActivity().getIntent().getExtras();
-            //String showLoc = bundle.getString("locationku");
-            //tvLoc.setText(showLoc);
 
             imageView = (ImageView) myFragmentView.findViewById(R.id.hasil);
 
