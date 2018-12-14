@@ -16,7 +16,7 @@ public class Emoji {
     public Emoji(String tanggal){
         this.tanggal = tanggal;
     }
-    
+
 
 
     public String getNama() {
